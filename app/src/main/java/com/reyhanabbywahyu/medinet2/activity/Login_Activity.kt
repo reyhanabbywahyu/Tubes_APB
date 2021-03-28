@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.reyhanabbywahyu.medinet2.DBHelper.DBHelper
 import com.reyhanabbywahyu.medinet2.R
 import com.reyhanabbywahyu.medinet2.`class`.User
 
@@ -15,40 +16,39 @@ class Login_Activity : AppCompatActivity() {
     lateinit var btnMasuk : Button
     lateinit var etMasukEmail : EditText
     lateinit var etMasukPassword : EditText
+    lateinit var  database : DBHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        Log.d("tikuk","78yiuhj")
+
+        database = DBHelper(this)
         btnMasuk = findViewById(R.id.btnMasuk)
         etMasukPassword = findViewById(R.id.etMasukPassword)
         etMasukEmail = findViewById(R.id.etMasukEmail)
         btnMasuk.setOnClickListener {
-            Log.d("tikuk","jkuh")
-            Toast.makeText(this,"TOLOL",Toast.LENGTH_LONG).show()
             var etMasukEmailtext: String = etMasukEmail.text.toString()
-            var etMasukPassword: String = etMasukPassword.text.toString()
-            user = User(etMasukEmailtext, etMasukPassword, "Roy","POP")
-
-            if (validate_login(user)) {
-                Toast.makeText(this,"Login Berhasi",Toast.LENGTH_LONG).show()
-                loginSuccesfull()
+            var usergetDatabase : User? = database.getDataBasedEmail(etMasukEmailtext)
+            if (usergetDatabase == null) {
+                Toast.makeText(this, "Andak Tidak terdapatar atau password salah",Toast.LENGTH_LONG).show()
             }
             else {
-                Toast.makeText(this, " Login gagal TOLOL",Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-    fun validate_login(User : User) : Boolean {
+                var etMasukPassword: String = etMasukPassword.text.toString()
+                if (etMasukPassword == usergetDatabase.password) {
+                    Toast.makeText(this, "BIsa Login ya bund",Toast.LENGTH_LONG).show()
+                    loginSuccesfull()
 
-        if(User.email == "kacang" && User.password == "123456") {
-            return true
+                }
+                else {
+                    Toast.makeText(this, "PASSWORD MU SALAH MAS",Toast.LENGTH_LONG).show()
+                }
+
+            }
+
         }
-        return false
     }
 
     fun loginSuccesfull() {
         intent = Intent(this,UtamaActivity::class.java)
-        intent.putExtra("EXTRA_USER",user)
         startActivity(intent)
     }
 }

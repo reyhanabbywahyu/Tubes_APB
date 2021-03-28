@@ -14,9 +14,9 @@ class User {
     var alamat : String?= null
     var tglLahir : String = "0-0-0000"
     constructor()
-    constructor(id: Int, email: String , password : String , nama_user : String, tglLahir : String) {
+    constructor(email: String , password : String , nama_user : String, tglLahir : String) {
         this.nama =nama_user
-        this.id=id
+        this.id=0
         this.password = password
         this.tglLahir = tglLahir
         this.email = email

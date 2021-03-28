@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.reyhanabbywahyu.medinet2.DBHelper.DBHelper
 import com.reyhanabbywahyu.medinet2.R
 import com.reyhanabbywahyu.medinet2.`class`.User
 
@@ -17,7 +18,7 @@ class Daftar_Activity : AppCompatActivity() {
     lateinit var etDaftarPassword : EditText
     lateinit var etDaftarPasswordKonfirmasi : EditText
     lateinit var etDaftarTanggalLahir : EditText
-
+    lateinit var database : DBHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar)
@@ -27,6 +28,7 @@ class Daftar_Activity : AppCompatActivity() {
         etDaftarPassword = findViewById(R.id.etDaftarPassword)
         etDaftarNama = findViewById(R.id.etDaftarNama)
         etDaftarEmail = findViewById(R.id.etDaftarEmail)
+        database = DBHelper(this)
         btnDaftar.setOnClickListener {
             var user: User? = getData()
             if (user != null) {
@@ -44,6 +46,7 @@ class Daftar_Activity : AppCompatActivity() {
         var konfirmasi : String = etDaftarPasswordKonfirmasi.text.toString()
         if(konfirmasi == password) {
             var user : User = User(email,password,namaLengkap,tglLahir)
+            database.insert_data(user)
             Toast.makeText(this,"Daftar Berhasil",Toast.LENGTH_LONG).show()
             return user
         }
