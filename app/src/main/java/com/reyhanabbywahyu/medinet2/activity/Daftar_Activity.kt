@@ -30,8 +30,6 @@ class Daftar_Activity : AppCompatActivity() {
         btnDaftar.setOnClickListener {
             var user: User? = getData()
             if (user != null) {
-                Log.d("HaloHaloBandung", user.email.toString(),)
-
                 intent = Intent(this, Login_Activity::class.java)
                 startActivity(intent)
             }
