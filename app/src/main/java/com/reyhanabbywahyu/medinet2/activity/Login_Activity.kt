@@ -28,12 +28,13 @@ class Login_Activity : AppCompatActivity() {
         btnMasuk.setOnClickListener {
             var etMasukEmailtext: String = etMasukEmail.text.toString()
             var usergetDatabase : User? = database.getDataBasedEmail(etMasukEmailtext)
+            Log.d("LOGINLOGIN",usergetDatabase?.email.toString())
             if (usergetDatabase == null) {
                 Toast.makeText(this, "Andak Tidak terdapatar atau password salah",Toast.LENGTH_LONG).show()
             }
             else {
                 var etMasukPassword: String = etMasukPassword.text.toString()
-                if (etMasukPassword == usergetDatabase.password) {
+                if (etMasukPassword == usergetDatabase.password.toString()) {
                     Toast.makeText(this, "BIsa Login ya bund",Toast.LENGTH_LONG).show()
                     loginSuccesfull()
 

@@ -46,6 +46,7 @@ class Daftar_Activity : AppCompatActivity() {
         var konfirmasi : String = etDaftarPasswordKonfirmasi.text.toString()
         if(konfirmasi == password) {
             var user : User = User(email,password,namaLengkap,tglLahir)
+            Log.d("DAFTAR",user.email.toString())
             database.insert_data(user)
             Toast.makeText(this,"Daftar Berhasil",Toast.LENGTH_LONG).show()
             return user

@@ -1,11 +1,14 @@
 package com.reyhanabbywahyu.medinet2.DBHelper
 
+import android.annotation.SuppressLint
 import android.app.Person
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.reyhanabbywahyu.medinet2.`class`.User
 
 
@@ -26,17 +29,19 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 
         val Create_Table : String ="CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "$COL_NAMA VARCHAR(50) NOT NULL, $COL_EMAIL VARCHAR(50) NOT NULL, $COL_ALAMAT TEXT ," +
-                "$COL_PASSWORD VARCHAR(30) NOT NULL, $COL_BALANCE INTEGER NOT NULL, $COL_TGLAHIR TEXT)"
+                "$COL_PASSWORD VARCHAR(30) NOT NULL, $COL_BALANCE FLOAT NOT NULL, $COL_TGLAHIR TEXT)"
         db!!.execSQL(Create_Table)
 
 
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+        db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        onCreate(db)
     }
 //Get
-    fun getAllData() : List<User> {
+@SuppressLint("Recycle")
+fun getAllData() : List<User> {
         val semuaUser = ArrayList<User>()
         val query = "SELECT * FROM $TABLE_NAME"
         val db : SQLiteDatabase = this.writableDatabase
@@ -63,6 +68,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     fun insert_data(person : User) {
         val db: SQLiteDatabase =this.writableDatabase
         val values = ContentValues()
+        Log.d("SQLSQL",person.email)
         values.put(COL_BALANCE,person.balance)
         values.put(COL_NAMA,person.nama)
         values.put(COL_EMAIL,person.email)
@@ -75,23 +81,31 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         db.close()
     }
 
-    fun getDataBasedEmail(email : String)  : User{
-        val db : SQLiteDatabase = this.readableDatabase
-        var Query  : String = "SELECT * FROM $TABLE_NAME WHERE Email=$email"
-        val cursor : Cursor = db.rawQuery(Query,null)
-        var orangyangDicari : User = User()
-        if(cursor.moveToFirst()) {
-            do {
-                orangyangDicari.id = cursor.getInt(cursor.getColumnIndex(COL_ID))
-                orangyangDicari.balance = cursor.getFloat(cursor.getColumnIndex(COL_BALANCE))
-                orangyangDicari.password = cursor.getString(cursor.getColumnIndex(COL_PASSWORD))
-                orangyangDicari.nama = cursor.getString(cursor.getColumnIndex(COL_NAMA))
-                orangyangDicari.alamat = cursor.getString(cursor.getColumnIndex(COL_ALAMAT))
-                orangyangDicari.email = cursor.getString(cursor.getColumnIndex(COL_EMAIL))
-            }while(cursor.moveToNext())
+    fun getDataBasedEmail(email : String)  : User?{
+        val db : SQLiteDatabase = this.writableDatabase
+        var orangyangDicari: User = User()
+        var cursor: Cursor? =null
+        var Query  : String = "SELECT * FROM $TABLE_NAME WHERE $COL_EMAIL='$email'"
+        try {
+             cursor = db.rawQuery(Query, null)
+            if (cursor.moveToFirst()) {
+                do {
+                    orangyangDicari.id = cursor.getInt(cursor.getColumnIndex(COL_ID))
+                    orangyangDicari.balance = cursor.getFloat(cursor.getColumnIndex(COL_BALANCE))
+                    orangyangDicari.password = cursor.getString(cursor.getColumnIndex(COL_PASSWORD))
+                    orangyangDicari.nama = cursor.getString(cursor.getColumnIndex(COL_NAMA))
+                    orangyangDicari.alamat = cursor.getString(cursor.getColumnIndex(COL_ALAMAT))
+                    orangyangDicari.email = cursor.getString(cursor.getColumnIndex(COL_EMAIL))
+                } while (cursor.moveToNext())
+            }
         }
-
+        catch (e : SQLiteException) {
+            Log.d("SQLError",e.message.toString())
+        }
         db.close()
+        if (orangyangDicari.equals(null)) {
+            return  null
+        }
         return orangyangDicari
     }
 
