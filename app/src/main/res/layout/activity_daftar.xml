@@ -178,13 +178,30 @@
                 android:backgroundTint="@color/Primary_color"
                 android:text="Daftar"
                 android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="149dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:text="Sudah punya akun?"
+                        android:paddingLeft="35dp"
+                        android:textSize="12sp" >
+                    </TextView>
+                    <Button
+                        android:id="@+id/btnDaftarMasuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Masuk"
+                        android:textSize="12sp"
+                        android:background="null"
+                        android:paddingRight="30dp"
+                        android:textColor="@color/Primary_color"/>
 
-            <TextView
-                android:layout_width="149dp"
-                android:layout_height="16dp"
-                android:layout_gravity="center"
-                android:text="Sudah punya akun?Masuk"
-                android:textSize="12sp" />
+
+                </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
