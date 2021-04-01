@@ -123,7 +123,7 @@
                    android:text="Daftar"
                    android:textColor="@color/Primary_color"
                    android:textSize="12sp"
-                   android:background="null"/>
+                   android:background="@color/white"/>
 
            </LinearLayout>
         </LinearLayout>

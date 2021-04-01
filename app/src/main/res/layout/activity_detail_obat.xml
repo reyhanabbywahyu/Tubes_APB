@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".activity.Detail_ObatActivity"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Detail_ObatActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        android:backgroundTint="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/Primary_color"
         app:cardCornerRadius="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/imgDetailPrev"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="7dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
-        //android:onClick=""
+            android:src="@drawable/ic_baseline_arrow_back_24"
+           />
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -100,7 +109,7 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:gravity="center"
-                    android:text="3"
+                    android:text="1"
                     android:textSize="11sp" />
 
 
@@ -170,7 +179,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailPeringatan" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tvDetailDetail"
                 android:layout_width="317dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
@@ -181,13 +190,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cvDetailObatBeliSekarang"
                 android:layout_width="296dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="17dp"
                 app:cardCornerRadius="100dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6">
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailDetail">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -220,7 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Rp. 80.000"
+                        android:text="0.0"
                         app:layout_constraintStart_toEndOf="@+id/imageView4"
                         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -241,3 +251,4 @@
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -196,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:text="Masuk"
                         android:textSize="12sp"
-                        android:background="null"
+                        android:background="@color/white"
                         android:paddingRight="30dp"
                         android:textColor="@color/Primary_color"/>
 
