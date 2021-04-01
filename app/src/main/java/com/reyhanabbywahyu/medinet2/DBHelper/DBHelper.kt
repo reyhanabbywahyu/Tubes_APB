@@ -34,7 +34,6 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 
 
     }
-
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
@@ -47,7 +46,6 @@ fun getAllData() : List<User> {
         val db : SQLiteDatabase = this.writableDatabase
         val cursor : Cursor = db.rawQuery(query,null)
             if (cursor.moveToFirst()) {
-
                 do {
                     val person = User()
                         person.id = cursor.getInt(cursor.getColumnIndex(COL_ID))
