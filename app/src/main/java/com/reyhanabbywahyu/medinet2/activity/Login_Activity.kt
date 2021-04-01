@@ -10,9 +10,10 @@ import android.widget.Toast
 import com.reyhanabbywahyu.medinet2.DBHelper.DBHelper
 import com.reyhanabbywahyu.medinet2.R
 import com.reyhanabbywahyu.medinet2.`class`.User
+import java.io.Serializable
 
 class Login_Activity : AppCompatActivity() {
-    lateinit  var user : User
+    var usergetDatabase : User?= null
     lateinit var btnMasuk : Button
     lateinit var etMasukEmail : EditText
     lateinit var etMasukPassword : EditText
@@ -27,14 +28,14 @@ class Login_Activity : AppCompatActivity() {
         etMasukEmail = findViewById(R.id.etMasukEmail)
         btnMasuk.setOnClickListener {
             var etMasukEmailtext: String = etMasukEmail.text.toString()
-            var usergetDatabase : User? = database.getDataBasedEmail(etMasukEmailtext)
+            usergetDatabase = database.getDataBasedEmail(etMasukEmailtext)
             Log.d("LOGINLOGIN",usergetDatabase?.email.toString())
             if (usergetDatabase == null) {
                 Toast.makeText(this, "Andak Tidak terdapatar atau password salah",Toast.LENGTH_LONG).show()
             }
             else {
                 var etMasukPassword: String = etMasukPassword.text.toString()
-                if (etMasukPassword == usergetDatabase.password.toString()) {
+                if (etMasukPassword == usergetDatabase!!.password.toString()) {
                     Toast.makeText(this, "BIsa Login ya bund",Toast.LENGTH_LONG).show()
                     loginSuccesfull()
 
@@ -49,7 +50,8 @@ class Login_Activity : AppCompatActivity() {
     }
 
     fun loginSuccesfull() {
-        intent = Intent(this,UtamaActivity::class.java)
+        intent = Intent(this,Toko_Obat_Activity::class.java)
+        intent.putExtra("EXTRA_USER",usergetDatabase as Serializable)
         startActivity(intent)
     }
 }
