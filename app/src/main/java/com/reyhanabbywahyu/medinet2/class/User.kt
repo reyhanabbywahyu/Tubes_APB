@@ -4,7 +4,7 @@ import androidx.versionedparcelable.ParcelField
 import java.io.Serializable
 import java.util.*
 
-class User {
+class User : Serializable{
 
     var email : String = "unknown"
     var id : Int=0
@@ -13,6 +13,7 @@ class User {
     var balance : Float = 0.0F
     var alamat : String?= null
     var tglLahir : String = "0-0-0000"
+    var item : MutableList<Obat> = mutableListOf()
     constructor()
     constructor(email: String , password : String , nama_user : String, tglLahir : String) {
         this.nama =nama_user
