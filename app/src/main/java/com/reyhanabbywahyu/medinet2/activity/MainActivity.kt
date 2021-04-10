@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import com.reyhanabbywahyu.medinet2.R
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({
             //val intent = Intent(this,Daftar_Activity::class.java)
 
-            val intent = Intent(this,Login_Activity::class.java)
+            val intent = Intent(this,Daftar_Activity::class.java)
             startActivity(intent)
         },3000)
 

@@ -7,9 +7,11 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.reyhanabbywahyu.medinet2.BerandaActivity
 import com.reyhanabbywahyu.medinet2.DBHelper.DBHelper
 import com.reyhanabbywahyu.medinet2.R
 import com.reyhanabbywahyu.medinet2.`class`.User
+import com.reyhanabbywahyu.medinet2.ui.Beranda.BerandaFragment
 import java.io.Serializable
 
 class Login_Activity : AppCompatActivity() {
@@ -29,7 +31,7 @@ class Login_Activity : AppCompatActivity() {
         btnMasuk.setOnClickListener {
             var etMasukEmailtext: String = etMasukEmail.text.toString()
             usergetDatabase = database.getDataBasedEmail(etMasukEmailtext)
-            Log.d("LOGINLOGIN",usergetDatabase?.email.toString())
+            Log.d("LOGINLOGIN",usergetDatabase?.nama.toString())
             if (usergetDatabase == null) {
                 Toast.makeText(this, "Andak Tidak terdapatar atau password salah",Toast.LENGTH_LONG).show()
             }
@@ -48,9 +50,9 @@ class Login_Activity : AppCompatActivity() {
 
         }
     }
-
     fun loginSuccesfull() {
-        intent = Intent(this,Toko_Obat_Activity::class.java)
+
+        intent = Intent(this,BerandaActivity::class.java)
         intent.putExtra("EXTRA_USER",usergetDatabase as Serializable)
         startActivity(intent)
     }

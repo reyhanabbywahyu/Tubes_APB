@@ -16,7 +16,9 @@
         <activity android:name=".activity.Toko_Obat_Activity" />
         <activity android:name=".activity.Daftar_Activity" />
         <activity android:name=".activity.UtamaActivity" />
-
+        <activity android:name=".BerandaActivity"/>
+        <activity android:name=".KedaiObat_Activity"/>
+        <activity android:name=".BiodataActivity"/>
 
         <activity
             android:name=".activity.MainActivity"

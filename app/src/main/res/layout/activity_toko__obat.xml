@@ -45,8 +45,8 @@
             android:id="@+id/tokoObat_search"
             android:layout_width="262dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/search_border"
             android:gravity="center_horizontal" />

@@ -32,7 +32,7 @@ class Detail_ObatActivity : AppCompatActivity() {
     lateinit var  cvDetailObatBeliSekarang : CardView
      var User : User = User()
      var OBat : Obat = Obat()
-     var total : Int = 1
+     var total : Int =1
     override fun onBackPressed() {
         //super.onBackPressed()
         //moveTaskToBack(true);
@@ -62,8 +62,22 @@ class Detail_ObatActivity : AppCompatActivity() {
         tvDetailKeterangan.text = Obat.jumlahdijual
         tvDetailHarga.text = Obat.harga.toString()
         tvDetailInformasiUmum.text = Obat.informasiumum
-        etKeranjangTotalObat.setText( total.toString())
-        tvDetailHargaAkhir.text = tvDetailHarga.text.toString()
+        if (User.item.size != 0) {
+            Log.d("Citarum","ADA OKO")
+            for (i in 0.. (User.item.size -1 ))
+            {
+                if(User.item[i].id == Obat.id) {
+                    etKeranjangTotalObat.setText(User.item[i].quantity.toString())
+                    total = User.item[i].quantity
+                }
+            }
+        }
+        else {
+            etKeranjangTotalObat.setText(total.toString())
+        }
+
+
+        tvDetailHargaAkhir.text = (tvDetailHarga.text.toString().toDouble() * total).toString()
         btnKeranjangKurang.setOnClickListener {
             etKeranjangTotalObat.setText(kurang().toString())
         }
@@ -78,9 +92,20 @@ class Detail_ObatActivity : AppCompatActivity() {
         cvDetailObatBeliSekarang.setOnClickListener {
             Toast.makeText(this,"Obat Berhasil Ditambahkan",Toast.LENGTH_LONG).show()
 
-            Obat.quantity = etKeranjangTotalObat.text.toString().toInt()
-            User?.item?.add(Obat)
-            Log.d("USERTOLOL",User?.item?.size.toString())
+            if(User.item.size != 0   ) {
+                for (i in 0..(User.item.size - 1)) {
+
+
+                    if (User.item[i].id == Obat.id && User.item[i].quantity != total) {
+                        User.item[i].quantity = total
+                    }
+                }
+            }
+            else {
+                Log.d("mas","MASOK SINI TEROS")
+                User.item.add(Obat)
+            }
+            Log.d("USERTOLOL",User.item.size.toString())
             intent = Intent(applicationContext,Keranjang_Activity::class.java )
 
             intent.putExtra("EXTRA_USER",User as Serializable)
@@ -108,7 +133,7 @@ class Detail_ObatActivity : AppCompatActivity() {
 
 
     fun tambah() : Int{
-        total = total + 1
+        total= total+ 1
         hitungHargaTotal()
         return total
     }

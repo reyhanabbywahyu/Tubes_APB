@@ -162,7 +162,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:enabled="true"
+                        android:checked="true"
                         android:text="Dompet Digital"/>
 
                     <RadioButton

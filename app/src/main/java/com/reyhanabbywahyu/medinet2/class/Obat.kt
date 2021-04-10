@@ -13,6 +13,19 @@ class Obat : Serializable{
         this.informasiumum = infoDetail
 
     }
+    constructor (id : Int, nama : String, harga : Double, kategori : String, jumlahdijual : String, informasiumum : String, informasidetail: String, peringatan : String, dosis : String) {
+        this.id = id
+        this.nama = nama
+        this.harga = harga
+        this.kategori = kategori
+        this.jumlahdijual = jumlahdijual
+        this.informasiumum = informasiumum
+        this.quantity = 1
+        this.informasiDetail = informasidetail
+        this.Peringatan = peringatan
+        this.Dosis = dosis
+    }
+
     var id : Int =0
     var nama : String? =null
     var harga : Double=0.0
