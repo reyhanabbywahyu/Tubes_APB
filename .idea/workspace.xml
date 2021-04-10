@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="Nexus 5X" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="37ad118e-a6e7-4e07-83b7-e29c01f48d46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/DBHelper/DBHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/DBHelper/DBHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Detail_ObatActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Detail_ObatActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Keranjang_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Keranjang_Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Login_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Login_Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Toko_Obat_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/Toko_Obat_Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/UtamaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/activity/UtamaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/adapter/KeranjangObatAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/Adapter/KeranjangObatAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/adapter/TokoObatAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/Adapter/TokoObatAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/class/Obat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/class/Obat.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/class/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/class/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/ui/Beranda/BerandaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/ui/Beranda/BerandaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/ui/Biodata/BiodataFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/ui/Biodata/BiodataFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/ui/Obat/ObatFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/reyhanabbywahyu/medinet2/ui/Obat/ObatFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_keranjang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_keranjang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_toko__obat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_toko__obat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beranda.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_biodata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_biodata.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_obat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_obat.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qNblWHGhyhNsOAKuUbPyvEC8W4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fix/TubesAPB/TubesAPB" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Medinet_2.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37ad118e-a6e7-4e07-83b7-e29c01f48d46" name="Default Changelist" comment="" />
+      <created>1616923145275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616923145275</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="394" y="131" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617855598118">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="394" y="131" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1617855598118" />
+    <state x="423" y="56" key="#com.intellij.ide.util.MemberChooser" timestamp="1617844536741">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="423" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1617844536741" />
+    <state x="100" y="100" width="1080" height="480" key="AVDManager" timestamp="1616937005904">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="100" y="100" width="1080" height="480" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1616937005904" />
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1617923143419">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1617923143419" />
+    <state width="1236" height="324" key="GridCell.Tab.0.bottom" timestamp="1617866062365">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="324" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1617866062365" />
+    <state width="1236" height="324" key="GridCell.Tab.0.center" timestamp="1617866062365">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="324" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1617866062365" />
+    <state width="1236" height="324" key="GridCell.Tab.0.left" timestamp="1617866062365">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="324" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1617866062365" />
+    <state width="1236" height="324" key="GridCell.Tab.0.right" timestamp="1617866062365">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="324" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1617866062365" />
+    <state x="336" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1617839793650">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="336" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1617839793650" />
+    <state x="469" y="108" key="refactoring.ChangeSignatureDialog" timestamp="1617787982896">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="469" y="108" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1617787982896" />
+    <state x="297" y="153" key="run.anything.popup" timestamp="1617075514137">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1617075514137" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1617854990284">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1617854990284" />
+  </component>
+</project>
