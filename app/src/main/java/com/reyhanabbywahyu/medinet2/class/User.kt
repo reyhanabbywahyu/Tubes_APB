@@ -14,6 +14,8 @@ class User : Serializable{
     var alamat : String?= null
     var tglLahir : String = "0-0-0000"
     var item : MutableList<Obat> = mutableListOf()
+    var berat : Float = 45.0f
+    var tinggi : Float = 0.0f
     constructor()
     constructor(email: String , password : String , nama_user : String, tglLahir : String) {
         this.nama =nama_user
@@ -23,7 +25,4 @@ class User : Serializable{
         this.email = email
         this.balance = 0.0F
     }
-
-
-
 }

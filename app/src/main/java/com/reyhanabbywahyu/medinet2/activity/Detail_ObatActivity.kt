@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.*
 import androidx.cardview.widget.CardView
+import com.reyhanabbywahyu.medinet2.KedaiObat_Activity
 import com.reyhanabbywahyu.medinet2.R
-import com.reyhanabbywahyu.medinet2.`class`.Obat
-import com.reyhanabbywahyu.medinet2.`class`.User
+import com.reyhanabbywahyu.medinet2.`class`.ObatResponse
+import com.reyhanabbywahyu.medinet2.`class`.UserResponse
 import java.io.Serializable
 
 class Detail_ObatActivity : AppCompatActivity() {
@@ -30,9 +30,9 @@ class Detail_ObatActivity : AppCompatActivity() {
     lateinit var btnDetailTambah : TextView
 
     lateinit var  cvDetailObatBeliSekarang : CardView
-     var User : User = User()
-     var OBat : Obat = Obat()
-     var total : Int = 1
+     var User : UserResponse = UserResponse()
+     var OBat : ObatResponse = ObatResponse()
+     var total : Int? =1
     override fun onBackPressed() {
         //super.onBackPressed()
         //moveTaskToBack(true);
@@ -55,15 +55,29 @@ class Detail_ObatActivity : AppCompatActivity() {
         tvDetailInformasiUmum = findViewById(R.id.tvDetailInformasiUmum)
         imgDetailPrev = findViewById(R.id.imgDetailPrev)
         cvDetailObatBeliSekarang = findViewById(R.id.cvDetailObatBeliSekarang)
-        User = intent.getSerializableExtra("EXTRA_USER") as User
-        var Obat : Obat = intent.getSerializableExtra("EXTRA_OBAT") as Obat
+        User = intent.getSerializableExtra("EXTRA_USER") as UserResponse
+        var Obat : ObatResponse = intent.getSerializableExtra("EXTRA_OBAT") as ObatResponse
 
         tvDetailJudul.text = Obat.nama
         tvDetailKeterangan.text = Obat.jumlahdijual
         tvDetailHarga.text = Obat.harga.toString()
         tvDetailInformasiUmum.text = Obat.informasiumum
-        etKeranjangTotalObat.setText( total.toString())
-        tvDetailHargaAkhir.text = tvDetailHarga.text.toString()
+
+        if (User.item.size != 0) {
+            for (i in 0.. (User.item.size -1 ))
+            {
+                if(User.item[i].id == Obat.id) {
+                    etKeranjangTotalObat.setText(User.item[i].quantity.toString())
+                    total = User.item[i].quantity
+                }
+            }
+        }
+        else {
+            etKeranjangTotalObat.setText(total.toString())
+        }
+
+
+        tvDetailHargaAkhir.text = (tvDetailHarga.text.toString().toDouble() * total!!).toString()
         btnKeranjangKurang.setOnClickListener {
             etKeranjangTotalObat.setText(kurang().toString())
         }
@@ -71,21 +85,30 @@ class Detail_ObatActivity : AppCompatActivity() {
             etKeranjangTotalObat.setText(tambah().toString())
         }
         imgDetailPrev.setOnClickListener {
-            intent = Intent(applicationContext, Toko_Obat_Activity::class.java)
+         //   intent = Intent(applicationContext, Toko_Obat_Activity::class.java)
+            intent = Intent(applicationContext, KedaiObat_Activity::class.java)
             intent.putExtra("EXTRA_USER",User)
             startActivity(intent)
         }
         cvDetailObatBeliSekarang.setOnClickListener {
             Toast.makeText(this,"Obat Berhasil Ditambahkan",Toast.LENGTH_LONG).show()
+            if(User.item.size != 0   ) {
+                for (i in 0..(User.item.size - 1)) {
+                    if (User.item[i].id == Obat.id && User.item[i].quantity != total) {
+                        User.item[i].quantity = total
+                    }
+                }
+            }
+            else {
+                Obat.quantity =etKeranjangTotalObat.text.toString().toInt()
+                User.item.add(Obat)
 
-            Obat.quantity = etKeranjangTotalObat.text.toString().toInt()
-            User?.item?.add(Obat)
-            Log.d("USERTOLOL",User?.item?.size.toString())
+            }
             intent = Intent(applicationContext,Keranjang_Activity::class.java )
-
             intent.putExtra("EXTRA_USER",User as Serializable)
             intent.putExtra("EXTRA_OBAT",Obat as Serializable)
             startActivity(intent)
+            finish()
         }
 
         val textWatcher = object : TextWatcher {
@@ -107,24 +130,24 @@ class Detail_ObatActivity : AppCompatActivity() {
     }
 
 
-    fun tambah() : Int{
-        total = total + 1
+    fun tambah() : Int?{
+        total= total?.plus(1)
         hitungHargaTotal()
         return total
     }
     fun hitungHargaTotal() : Unit{
 
-        var hargatot = total * tvDetailHarga.text.toString().toDouble()
+        var hargatot = total?.times(tvDetailHarga.text.toString().toDouble())
         tvDetailHargaAkhir.text = hargatot.toString()
 
     }
-    fun kurang() : Int {
-        if (total<1) {
+    fun kurang() : Int? {
+        if (total!! <1) {
             total = 0
             tvDetailHargaAkhir.text = "0"
         }
         else {
-            total = total - 1
+            total = total!! - 1
             hitungHargaTotal()
         }
         return total
