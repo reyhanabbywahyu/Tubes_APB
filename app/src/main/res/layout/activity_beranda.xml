@@ -156,6 +156,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/crd_beranda_bayar"
                         android:layout_width="122dp"
                         android:layout_height="46dp"
                         android:layout_gravity="center_vertical"

@@ -31,10 +31,12 @@ data class UserResponse(
         var tinggi : Int  ?= 0,
 
         @field:SerializedName("berat")
-        var berat : Int ?= 0
+        var berat : Int ?= 0,
+
+        @field:SerializedName("balance")
+        var balance : Double =  1000.0
 ) : Serializable {
         var item : MutableList<ObatResponse> = mutableListOf()
-        var balance : Float = 100.0f
 }
 /*
 class User : Serializable{

@@ -21,6 +21,7 @@ import com.reyhanabbywahyu.medinet2.R
 import com.reyhanabbywahyu.medinet2.`class`.ObatResponse
 import com.reyhanabbywahyu.medinet2.`class`.UserResponse
 import com.reyhanabbywahyu.medinet2.Adapter.KeranjangObatAdapter
+import com.reyhanabbywahyu.medinet2.BerandaActivity
 import com.reyhanabbywahyu.medinet2.`class`.action.ResponseAction
 import com.reyhanabbywahyu.medinet2.config.NetworkModule
 import retrofit2.Call
@@ -47,6 +48,7 @@ class Keranjang_Activity : AppCompatActivity() {
     lateinit var locationRequest : LocationRequest
     val PERMISSION_ID = 1000
     var user : UserResponse = UserResponse()
+    var obat : ObatResponse = ObatResponse()
 
     override fun onBackPressed() {
         //super.onBackPressed()
@@ -75,16 +77,22 @@ class Keranjang_Activity : AppCompatActivity() {
             }
         }
     }
+    private fun getDataFromIntent() {
+        user = intent.getSerializableExtra("EXTRA_USER") as UserResponse
+        if(intent.getSerializableExtra("EXTRA_OBAT") != null) {
+            obat = intent.getSerializableExtra("EXTRA_OBAT") as ObatResponse
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_keranjang)
 
         //inisialisasi Id
         initViews()
+        getDataFromIntent()
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
-        user = intent.getSerializableExtra("EXTRA_USER") as UserResponse
-        var Obat: ObatResponse = intent.getSerializableExtra("EXTRA_OBAT") as ObatResponse
+
         checkAddress()
 
         btnKeranjangAlamatGenerate.setOnClickListener {
@@ -93,11 +101,24 @@ class Keranjang_Activity : AppCompatActivity() {
 
         imgPrevKeranjang.setOnClickListener {
             // intent = Intent(applicationContext, UtamaActivity::class.java)
-            intent = Intent(applicationContext, Detail_ObatActivity::class.java)
-            intent.putExtra("EXTRA_USER", user as Serializable)
-            intent.putExtra("EXTRA_OBAT", Obat as Serializable)
-            startActivity(intent)
-            finish()
+
+            if(intent.getSerializableExtra("EXTRA_OBAT") != null) {
+                intent = Intent(applicationContext, Detail_ObatActivity::class.java)
+                intent.putExtra("EXTRA_USER", user as Serializable)
+                intent.putExtra("EXTRA_OBAT", obat as Serializable)
+
+                startActivity(intent)
+                finish()
+            }
+            else if(intent.getSerializableExtra("EXTRA_OBAT") == null) {
+
+                intent = Intent(applicationContext, BerandaActivity::class.java)
+                intent.putExtra("EXTRA_USER", user as Serializable)
+
+                startActivity(intent)
+                finish()
+            }
+
         }
 
         radiogroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->

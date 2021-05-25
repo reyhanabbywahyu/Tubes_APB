@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({
             //val intent = Intent(this,Daftar_Activity::class.java)
 
-            val intent = Intent(this,Daftar_Activity::class.java)
+            val intent = Intent(this,Login_Activity::class.java)
             startActivity(intent)
             finish()
         },3000)

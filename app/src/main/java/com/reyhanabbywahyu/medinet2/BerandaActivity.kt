@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Adapter
 import android.widget.AdapterView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,8 +21,11 @@ import com.reyhanabbywahyu.medinet2.`class`.ObatResponse
 import com.reyhanabbywahyu.medinet2.`class`.UserResponse
 import com.reyhanabbywahyu.medinet2.`class`.getdata.ResponseGetDataObat
 import com.reyhanabbywahyu.medinet2.activity.Detail_ObatActivity
+import com.reyhanabbywahyu.medinet2.activity.Dompet_Activity
+import com.reyhanabbywahyu.medinet2.activity.Keranjang_Activity
 import com.reyhanabbywahyu.medinet2.activity.Toko_Obat_Activity
 import com.reyhanabbywahyu.medinet2.config.NetworkModule
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,6 +40,9 @@ class BerandaActivity : AppCompatActivity() {
     lateinit var btn_maag: CardView
     lateinit var btn_lainnya: CardView
     lateinit var btn_flu: CardView
+    lateinit var tv_beranda_saldo : TextView
+    lateinit var cd_beranda_topup : CardView
+    lateinit var cd_beranda_bayar : CardView
     var dataObatImun : MutableList<ObatResponse>? = mutableListOf()
     var listObat : MutableList<ObatResponse>? =  mutableListOf()
     var i = 0
@@ -61,15 +68,22 @@ class BerandaActivity : AppCompatActivity() {
             user.item.add(item)
         }
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_beranda)
+    fun initViews() {
+
         btn_covid = findViewById(R.id.cvbtnBerandaCovid)
         btn_demam = findViewById(R.id.cvbtnBerandaDemam)
         btn_sakitkepala = findViewById(R.id.cvbtnBerandaSakitKepala)
         btn_maag = findViewById(R.id.cvbtnBerandaMaag)
         btn_flu = findViewById(R.id.cvbtnBerandFlu)
         btn_lainnya = findViewById(R.id.cvbtnBerandaLainnya)
+        tv_beranda_saldo = findViewById(R.id.tx_beranda_saldo)
+        cd_beranda_bayar = findViewById(R.id.crd_beranda_bayar)
+        cd_beranda_topup = findViewById(R.id.crd_Beranda_topup)
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_beranda)
+        initViews()
 
         user = intent.getSerializableExtra("EXTRA_USER") as UserResponse
         fun gotoObatFragment(kategori:String) : Unit{
@@ -80,6 +94,20 @@ class BerandaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        tv_beranda_saldo.text = user.balance.toString()
+
+        cd_beranda_topup.setOnClickListener {
+            val intent = Intent(applicationContext,Dompet_Activity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            intent.putExtra("EXTRA_USER", user)
+            startActivity(intent)
+        }
+       cd_beranda_bayar.setOnClickListener {
+           val intent = Intent(applicationContext, Keranjang_Activity::class.java)
+           intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+           intent.putExtra("EXTRA_USER",user)
+           startActivity(intent)
+       }
         btn_covid.setOnClickListener {
             gotoObatFragment("covid")
         }

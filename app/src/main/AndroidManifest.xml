@@ -31,6 +31,7 @@
         <activity android:name=".BerandaActivity" />
         <activity android:name=".KedaiObat_Activity" />
         <activity android:name=".BiodataActivity" />
+        <activity android:name=".activity.Dompet_Activity"/>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"

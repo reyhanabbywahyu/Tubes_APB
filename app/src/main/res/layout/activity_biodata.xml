@@ -426,11 +426,24 @@
                 android:id="@+id/btn_biodata_HapusAKUN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hapus_akun"
                 android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="60dp"
+                android:text="@string/hapus_akun"
+                app:layout_constraintEnd_toEndOf="@id/btnBiodata_Logout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/crd_biodata_personal" />
+
+            <Button
+                android:id="@+id/btnBiodata_Logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:text="Log Out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/btn_biodata_HapusAKUN"
+                app:layout_constraintTop_toBottomOf="@id/crd_biodata_personal" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

@@ -34,6 +34,7 @@ import com.reyhanabbywahyu.medinet2.`class`.getdata.ResponseGetDataUser
 import com.reyhanabbywahyu.medinet2.activity.Login_Activity
 import com.reyhanabbywahyu.medinet2.config.NetworkImage
 import com.reyhanabbywahyu.medinet2.config.NetworkModule
+import com.reyhanabbywahyu.medinet2.utils.PreferenceUtils
 import com.reyhanabbywahyu.medinet2.utils.ProgressRequestBody
 import okhttp3.MultipartBody
 import retrofit2.Call
@@ -63,6 +64,7 @@ class BiodataActivity : AppCompatActivity(), ProgressRequestBody.UploadCallbacks
     lateinit var biodata_email : EditText
     lateinit var  biodata_berat : EditText
     lateinit var  biodata_tinggi : EditText
+    lateinit var biodata_logout : Button
 
 
     lateinit var  btnSimpanPersonal : Button
@@ -91,12 +93,7 @@ class BiodataActivity : AppCompatActivity(), ProgressRequestBody.UploadCallbacks
             }
         })
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_biodata)
-        val bottomNavigation : BottomNavigationView = findViewById(R.id.bottom_navigation)
-        user = intent.getSerializableExtra("EXTRA_USER") as UserResponse
-  //      database = DBHelper(this)
+    private fun initViews() {
         biodata_image_view = findViewById(R.id.Img_biodata)
 
         biodata_beratView = findViewById(R.id.tx_biodata_berat_ganti)
@@ -119,9 +116,25 @@ class BiodataActivity : AppCompatActivity(), ProgressRequestBody.UploadCallbacks
         biodata_berat = findViewById(R.id.et_biodata_berat)
 
         hapusAkun = findViewById(R.id.btn_biodata_HapusAKUN)
-
-
+        biodata_logout = findViewById(R.id.btnBiodata_Logout)
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_biodata)
+        val bottomNavigation : BottomNavigationView = findViewById(R.id.bottom_navigation)
+        user = intent.getSerializableExtra("EXTRA_USER") as UserResponse
+  //      database = DBHelper(this)
+        initViews()
         refreshData()
+        biodata_logout.setOnClickListener {
+            PreferenceUtils.saveEmail("",this)
+            PreferenceUtils.savePassword("",this)
+            var intent = Intent(this, Login_Activity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+
+
+        }
         biodata_image_view.setOnClickListener {
 
 

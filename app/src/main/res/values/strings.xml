@@ -94,4 +94,14 @@
     <string name="obat_default">IMBOOST FORCE 10 KAPLET</string>
     <string name="tambah">Tambah</string>
     <string name="jumlah_default">3</string>
+    <string name="dompet">Dompet</string>
+    <string name="top_up_cepat">Top Up Cepat</string>
+    <string name="rp_25_000">Rp. 25.000</string>
+    <string name="top_up">Top Up</string>
+    <string name="nominal">Nominal</string>
+    <string name="rp_50_000">Rp. 50.000</string>
+    <string name="rp_100_000">Rp. 100.000</string>
+    <string name="rp_200_000">Rp. 200.000</string>
+    <string name="rp_250_000">Rp. 250.000</string>
+    <string name="rp_300_000">Rp. 300.000</string>
 </resources>

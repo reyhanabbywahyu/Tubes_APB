@@ -61,6 +61,10 @@ interface ApiService {
     @GET("getObatByKategori.php")
     fun getObatByKategori(@Query("kategori") kategori : String) : Call<ResponseGetDataObat>
 
+    @FormUrlEncoded
+    @POST("updateBalance.php")
+    fun updateBalance(@Field("id_user") id_user : String,
+                      @Field("balance")balance : Double)      : Call<ResponseAction>
 
 
 
